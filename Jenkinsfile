@@ -2,11 +2,8 @@ pipeline {
     agent any
     environment {
 
-	  GIT_URL = "git@github.ibm.com:sba/front.git"
-		GIT_CRED = "48946d03-31f8-4cee-a4ed-c138e7b900a0"
-		DOCKER_REPO="registry.cn-shanghai.aliyuncs.com/yuanbing/sba-front"
-		DOCKER_REG="https://registry.cn-shanghai.aliyuncs.com"
-		DOCKER_REG_KEY = "874c3949-6135-41d1-902c-ebd184193ded"
+	  	GIT_URL = "https://github.com/talkhu/sba-front.git"
+		GIT_CRED = "b6514644-84fc-410a-9ee0-7b3002b7c931"
 		dockerImage = ''
 
     }
@@ -19,47 +16,23 @@ pipeline {
               }
         stage('Angular Build'){
         	steps{
-              sh 'mkdir -p server/public'
-              sh 'npm install'
-        	    sh 'ng build --prod'
+			  bat 'npm install -g @angular/cli'
+              bat 'npm install'
+        	  bat 'ng build --prod'
         	}
 
         }
 
-        stage('Building image') {
+       stage('Building image') {
 	      steps{
-	        script {
-	           docker.withRegistry( DOCKER_REG, DOCKER_REG_KEY ) {dockerImage = docker.build DOCKER_REPO + ":$BUILD_NUMBER"
-	           }
+		        script {
+		        bat 'docker build -t sbafront:build1 .'
+		        bat 'docker run -d --name front -p 4200:4200 sbafront:build1'
 	        }
 	      }
 	    }
-	    stage('Push Image') {
-      steps{
-        script {
-		   docker.withRegistry( DOCKER_REG, DOCKER_REG_KEY ) {
-		            dockerImage.push()
-		          }
-		        }
-		      }
-		}
 
-		stage('Deploy Image to K8s') {
-      steps{
-        script {
-          sh 'cd ../'
-        	sh "sed -i 's/{version}/" + BUILD_NUMBER + "/g' deployment.yaml"
-	   		sh 'kubectl apply -f deployment.yaml'
-		      }
-		}
-		}
-
-
-		stage('Remove Unused docker image') {
-      steps{
-        sh "docker rmi $DOCKER_REPO:$BUILD_NUMBER"
-      }
-    }
+		
    }
 
 
