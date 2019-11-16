@@ -18,18 +18,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ##  SBA Evaluation - add a feature to diable course whose name matches with a given String.
 
-#### 1.Added an input to search course and a button to disable the course
+#### 1. Solution: Added an input to search course and a button to disable the courses,
 ![step1](./screenshot/step1.png)
 
-#### 2. search the course by name :java , all the courses having java name showed as below
+#### 2. Login as mentor search the course by name `java` , all the courses having `java` name are shown as below
 ![step2](./screenshot/step2.png)
 
-#### 3.clicked the `Disable the Course` button ,all the `java` courses are disabled and will not showned 
+#### 3.click the `Disable the Course` button ,all the `java` courses are disabled and will not be shown 
 ![step3](./screenshot/step3.jpeg)
 
-#### 4. I also added an `Disabled Course` label,all the disabled courses will be shown
+#### 4. I also add a `Disabled Course` tab to manage the disabled courses, all the disabled courses will be shown in this tab
 ![step4](./screenshot/step4.png) 
-
 #### 5. click the `enable the courses` button ,all the disabled coursed will be availabled 
 ![step5](./screenshot/step5.png) 
 ![step6](./screenshot/step6.png) 
