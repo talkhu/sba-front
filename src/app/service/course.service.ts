@@ -50,7 +50,20 @@ export class CourseService {
     return this.http.get(`${environment.gatewayurl}/course/api/v1/listavailablecourse?mentorname=${mentorname}`);
   }
 
+  findMentorDisabledCourses(mentorname: string) {
+    return this.http.get(`${environment.gatewayurl}/course/api/v1/listdisablecourse?mentorname=${mentorname}`);
+  }
+
   findMentorCompletedCourses(mentorname: string) {
     return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/listdone?mentorname=${mentorname}`);
   }
+
+  disableSearchCourses(course: NewCourse) {
+    return this.http.put(`${environment.gatewayurl}/course/api/v1/disablecourses`, course);
+  }
+
+  enableSearchCourses(course: NewCourse) {
+    return this.http.put(`${environment.gatewayurl}/course/api/v1/enablecourses`, course);
+  }
+
 }

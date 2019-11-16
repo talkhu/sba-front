@@ -4,7 +4,7 @@ import { AuthenticationService } from '../service/authentication.service';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddCourseComponent } from '../add-course/add-course.component';
-
+import { CourseListComponent } from '../course-list/course-list.component';
 
 @Component({
   selector: 'app-home',
@@ -51,6 +51,21 @@ export class HomeComponent implements OnInit {
     // dialogRef.afterClosed().subscribe(
     //   val => console.log('Dialog output:', val)
     // );
+}
+
+disableCourseDialog() {
+
+  const disableDialogConfig = new MatDialogConfig();
+
+  disableDialogConfig.disableClose = true;
+  disableDialogConfig.autoFocus = true;
+  disableDialogConfig.width = '500px';
+
+  disableDialogConfig.data = {
+};
+
+  this.dialog.open(CourseListComponent,
+    disableDialogConfig);
 }
 
 }

@@ -3,8 +3,8 @@
     <span>Mentor On Demand</span>
     <div *ngIf="currentUser && currentUser.role === 'mentor'; else userbar" class="toolbar-mentor">
         <button mat-stroked-button (click)="addCourseDialog()">Create Course</button>
-
-      </div>
+    </div>
+    
     <ng-template #userbar>
     <div class="toolbar-search">
 

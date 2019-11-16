@@ -2,26 +2,39 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
-## Development server
+#### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+#### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+#### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+##  SBA Evaluation - add a feature to diable course whose name matches with a given String.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### 1.Added an input to search course and a button to disable the course
+![step1](./screenshot/step1.png)
 
-## Further help
+#### 2. search the course by name :java , all the courses having java name showed as below
+![step2](./screenshot/step2.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### 3.clicked the `Disable the Course` button ,all the `java` courses are disabled and will not showned 
+![step3](./screenshot/step3.jpeg)
+
+#### 4. I also added an `Disabled Course` label,all the disabled courses will be shown
+![step4](./screenshot/step4.png) 
+
+#### 5. click the `enable the courses` button ,all the disabled coursed will be availabled 
+![step5](./screenshot/step5.png) 
+![step6](./screenshot/step6.png) 
+
+
+
+
+
