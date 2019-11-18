@@ -34,6 +34,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ![step6](./screenshot/step6.png) 
 
 
+## Docker Usage
+![docker](./screenshot/dockerUsage.jpg)
+
 
 
 
