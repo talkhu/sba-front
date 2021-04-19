@@ -4,6 +4,8 @@
 
 trigger:
 - master
+pool:
+  vmImage: ubuntu-latest
 
 resources:
 - repo: self
